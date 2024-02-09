@@ -117,6 +117,7 @@ sequenceDiagram
     
     ```json
     {
+      "nLPlugin": "1.0.0",
       "Type": "Request",
       "Method": "RegisterPlugin",
       "Data": { "Name": "plugin name", "Developer": "your name" }
@@ -130,6 +131,7 @@ sequenceDiagram
     
     ```json
     {
+      "nLPlugin": "1.0.0",
       "Type": "Response",
       "Method": "RegisterPlugin",
       "Data": { "Token": "f2jm8ASDe3..." }
@@ -143,6 +145,7 @@ sequenceDiagram
     
     ```json
     {
+      "nLPlugin": "1.0.0",
       "Type": "Event",
       "Method": "NotifyEnabledChanged",
       "Data": { "Enabled": true }
@@ -159,6 +162,7 @@ sequenceDiagram
     
     ```json
     {
+      "nLPlugin": "1.0.0",
       "Type": "Request",
       "Method": "EstablishConnection",
       "Data": {
@@ -173,6 +177,7 @@ sequenceDiagram
         
         ```json
         {
+          "nLPlugin": "1.0.0",
           "Type": "Error",
           "Method": "EstablishConnection",
           "Data": { "ErrorType": "InvalidToken" }
@@ -186,6 +191,7 @@ sequenceDiagram
         
         ```json
         {
+          "nLPlugin": "1.0.0",
           "Type": "Request",
           "Method": "EstablishConnection",
           "Data": { "Enabled": false }
@@ -197,6 +203,7 @@ sequenceDiagram
         
         ```json
         {
+          "nLPlugin": "1.0.0",
           "Type": "Event",
           "Method": "NotifyEnabledChanged",
           "Data": { "Enabled": true }
@@ -229,6 +236,7 @@ sequenceDiagram
 
 ```json
 {
+  "nLPlugin": "1.0.0",
   "Type": "Request",
   "Method": "GetCubismParameterValues",
   "Data": { "ModelId": "1" }
@@ -239,6 +247,7 @@ sequenceDiagram
 
 ```json
 {
+  "nLPlugin": "1.0.0",
   "Type": "Response",
   "Method": "GetCubismParameterValues",
   "Data": { "CubismParameterValues": [ { "Id": "ParamAngleX", "Value": 10.3 }, ... ] }
@@ -251,6 +260,7 @@ sequenceDiagram
 
 ```json
 {
+  "nLPlugin": "1.0.0",
   "Type": "Error",
   "Method": "GetCubismParameterValues",
   "Data": { "ErrorType": "InvalidModelId" }
@@ -288,6 +298,7 @@ sequenceDiagram
 
 ```json
 {
+  "nLPlugin": "1.0.0",
   "Type": "Request",
   "Method": "NotifyFrameUpdated"
 }
@@ -297,6 +308,7 @@ sequenceDiagram
 
 ```json
 {
+  "nLPlugin": "1.0.0",
   "Type": "Response",
   "Method": "NotifyFrameUpdated"
 }
@@ -306,6 +318,7 @@ sequenceDiagram
 
 ```json
 {
+  "nLPlugin": "1.0.0",
   "Type": "Event",
   "Method": "NotifyFrameUpdated",
   "Data": {
@@ -324,6 +337,7 @@ sequenceDiagram
 
 ```json
 {
+  "nLPlugin": "1.0.0",
   "Type": "Request",
   "Method": "NotifyFrameUpdated",
   "Data": { "Enabled": false }
