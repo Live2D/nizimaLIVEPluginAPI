@@ -529,6 +529,15 @@ Data の内容が追加されるときに上げる
 *2: 非対応の Method は使用できない
 
 ## 変更履歴
+### 1.1.0
+- エフェクト操作の Method を追加
+  - DisableEffectGroup
+  - EnableEffectGroup
+  - GetEffectGroups
+  - SetEffectParameterValues
+  - GetEffectParameters
+  - GetEffects
+
 ### 1.0.1
 - SetLiveParameterValues の Request Data Type に Overwrite と Time を追加
 

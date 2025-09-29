@@ -531,6 +531,125 @@ Enabled?: boolean
 SceneId: string
 ```
 
+## DisableEffectGroup
+
+### Request Data Type
+
+```typescript
+GroupId: string
+```
+
+### Response Data Type
+
+```typescript
+{}
+```
+
+### Error Types
+
+* `InvalidEffectGroupId`
+
+## EnableEffectGroup
+
+### Request Data Type
+
+```typescript
+GroupId: string
+```
+
+### Response Data Type
+
+```typescript
+{}
+```
+
+### Error Types
+
+* `InvalidEffectGroupId`
+
+## GetEffectGroups
+
+### Request Data Type
+
+```typescript
+{}
+```
+
+### Response Data Type
+
+```typescript
+EffectGroups: Array<{
+  Name: string,
+  GroupId: string,
+  SceneId: string,
+  Target: string,
+  Enabled: bool
+}>
+```
+
+## SetEffectParameterValues
+
+### Request Data Type
+
+```typescript
+EffectId: string,
+EffectParameterValues: Array<{
+  Id: string,
+  Value: number
+}>
+```
+
+### Response Data Type
+
+```typescript
+{}
+```
+
+### Error Types
+
+* `InvalidEffectId`
+
+## GetEffectParameters
+
+### Request Data Type
+
+```typescript
+EffectId: string
+```
+
+### Response Data Type
+
+```typescript
+EffectParameters: Array<{
+  Id: string,
+  Base: number
+}>
+```
+
+### Error Types
+
+* `InvalidEffectId`
+
+## GetEffects
+
+### Request Data Type
+
+```typescript
+{}
+```
+
+### Response Data Type
+
+```typescript
+Effects: Array<{
+  Name: string,
+  EffectId: string,
+  SceneId: string,
+  Target: string,
+  Enabled: bool
+}>
+```
+
 ## RemoveModel
 
 画面上に表示されているモデルを指定して削除する。
