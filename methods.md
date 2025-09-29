@@ -220,6 +220,8 @@ CubismParameters: Array<{
 
 ```typescript
 ModelId?: string,
+Overwrite?: bool,
+Time?: number,
 LiveParameterValues: Array<{
   Id: string,
   Value: number
@@ -227,7 +229,11 @@ LiveParameterValues: Array<{
 ```
 
 ModelId には Live2D アイテムの ItemId も設定可能。  
-ModelId の指定がない場合はすべてのモデルに適用される。
+ModelId の指定がない場合はすべてのモデルに適用される。  
+Overwrite が true の場合、ほかの入力を上書きしてこの値を優先的に使用するようになる。複数プラグインが Overwrite した場合の動作は未定義。  
+Overwrite が false の場合、補正がかかり、ほかの入力と合成して使用される。  
+Time が存在する場合は補正の参考に使用される。  
+Overwrite のデフォルト値は true。
 
 ### Response Data Type
 
