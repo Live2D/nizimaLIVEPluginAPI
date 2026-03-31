@@ -10,13 +10,15 @@ nizima LIVE にプラグインを登録する。
 Name: string,
 Developer?: string,
 Version?: string,
-Icon?: string
+Icon?: string,
+IsTrackingDevice?: boolean
 ```
 
-- Name: プラグインの名前  
-- Developer: 開発者名  
-- Version: プラグインのバージョン  
+- Name: プラグインの名前
+- Developer: 開発者名
+- Version: プラグインのバージョン
 - Icon: Base64 でエンコードされた PNG ファイル。正方形の画像を使用しないと表示が崩れる可能性がある。
+- IsTrackingDevice: トラッキングデバイスとして動作するプラグインの場合に true を設定する。デフォルトは false。
 
 ### Response Data Type
 
@@ -293,6 +295,30 @@ ModelId には Live2D アイテムの ItemId も設定可能。
 ### Error Types
 
 * `InvalidModelId`
+
+## SetTrackingParameterValues
+
+トラッキングパラメータの値を設定する。
+最後に値を設定してから 500ms の間はその値を維持する。
+複数のプラグインやスクリプトから同じパラメータの値を設定した場合の動作は未定義。
+
+### Request Data Type
+
+```typescript
+TrackingParameterValues: Array<{
+  Id: string,
+  Value: number
+}>,
+Time?: number
+```
+
+Time が存在する場合は補正の参考に使用される。
+
+### Response Data Type
+
+```typescript
+{}
+```
 
 ## InsertLiveParameters
 
@@ -953,6 +979,30 @@ Color について
 
 * `InvalidModelId`
 
+## TriggerModelHotkey
+
+指定したモデルのホットキーをトリガーする。
+
+### Request Data Type
+
+```typescript
+ModelId: string,
+Key: string
+```
+
+ModelId には Live2D アイテムの ItemId も設定可能。  
+Key は QKeySequence 形式の文字列（例: "Ctrl+A", "F1"）。
+
+### Response Data Type
+
+```typescript
+{}
+```
+
+### Error Types
+
+* `InvalidModelId`
+
 ## SetPartsColor
 
 指定したモデルの Part の色を変更する。
@@ -1197,7 +1247,7 @@ ItemPath: string
 ### Response Data Type
 
 ```typescript
-{}
+ItemId: string
 ```
 
 ### Error Types

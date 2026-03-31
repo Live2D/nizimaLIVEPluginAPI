@@ -11,7 +11,7 @@ nizima LIVE の MouseX/MouseY をウィンドウ内座標からモニター座�
 QML Sample をベースに作成した。  
 nizima LIVE からの起動時にはバックグランドで動作する。
 
-## [Prameter Preview](https://github.com/Live2D-Garage/nLPluginParameterPreview)
+## [Parameter Preview](https://github.com/Live2D-Garage/nLPluginParameterPreview)
 
 Web プラグインのサンプル。  
 モデルのパラメータの現在値を表示できる。
@@ -188,11 +188,11 @@ sequenceDiagram
         このままでは API の使用ができないので、初回接続の手順で再度登録する
         
     - Response を受け取った場合
-        
+
         ```json
         {
           "nLPlugin": "1.0.0",
-          "Type": "Request",
+          "Type": "Response",
           "Method": "EstablishConnection",
           "Data": { "Enabled": false }
         }
@@ -466,7 +466,7 @@ ModelId: string
   "Timestamp": 1696233949626,
   "Id": "request2",
   "Type": "Response",
-  "Method": "GetCurrentModelId",
+  "Method": "NotifyCurrentModelChanged",
   "Data": {}
 }
 ```
@@ -478,7 +478,7 @@ ModelId: string
   "nLPlugin": "1.0.0",
   "Timestamp": 1696233951345,
   "Type": "Event",
-  "Method": "GetCurrentModelId",
+  "Method": "NotifyCurrentModelChanged",
   "Data": { "ModelId": "2" }
 }
 ```
@@ -529,6 +529,11 @@ Data の内容が追加されるときに上げる
 *2: 非対応の Method は使用できない
 
 ## 変更履歴
+### 1.2.0
+- トラッキングデバイス向けの機能を追加
+  - SetTrackingParameterValues Method を追加
+  - RegisterPlugin の Request Data Type に IsTrackingDevice を追加
+
 ### 1.1.0
 - エフェクト操作の Method を追加
   - DisableEffectGroup
@@ -537,6 +542,9 @@ Data の内容が追加されるときに上げる
   - SetEffectParameterValues
   - GetEffectParameters
   - GetEffects
+- モデル操作の Method を追加
+  - TriggerModelHotkey
+- AddItem の Response Data Type に ItemId を追加
 
 ### 1.0.1
 - SetLiveParameterValues の Request Data Type に Overwrite と Time を追加
